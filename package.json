@@ -12,6 +12,7 @@
     "apollo-link-ws": "1.0.9",
     "apollo-server": "2.1.0",
     "apollo-utilities": "1.0.21",
+    "concurrently": "^4.1.2",
     "graphql": "14.0.2",
     "graphql-subscriptions": "1.0.0",
     "graphql-tag": "2.9.2",
@@ -54,7 +55,8 @@
     "start-graphql-server:debug-exec": "run-s build-graphql-server inspect-graphql-server",
     "start-rest-server-exec": "cross-env-shell json-server --port=$PORT --static node_modules/json-server/dist db.json",
     "test": "react-scripts test --env=jsdom",
-    "test:debug": "react-scripts --inspect-brk test --runInBand --env=jsdom"
+    "test:debug": "react-scripts --inspect-brk test --runInBand --env=jsdom",
+    "dev": "concurrently \"npm run start-rest-server\" \"npm run start-graphql-server\" \"npm run start-client\""
   },
   "devDependencies": {
     "babel-cli": "6.26.0",
